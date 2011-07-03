@@ -1,0 +1,6 @@
+#ifndef TNTGUI_H_INCLUDED
+#define TNTGUI_H_INCLUDED
+
+
+
+#endif // TNTGUI_H_INCLUDED
