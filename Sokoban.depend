@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1309723399 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
+	<stdio.h>
+	<stdlib.h>
+	"headers/tntio.h"
+	"headers/tntgui.h"
+	"headers/sokuban.h"
+
+1309723495 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\sokuban.h
+
+1309720043 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\tntio.h
+
+1309720039 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\tntgui.h
+
+1309720513 c:\users\fititnt\joomla\git\fititnt\sokoban\core\inicio.c
+
+1309721328 source:c:\users\fititnt\joomla\git\fititnt\sokoban\core\inicio.c
+

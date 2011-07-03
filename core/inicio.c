@@ -1,0 +1,10 @@
+#ifndef INICIO_C_INCLUDED
+#define INICIO_C_INCLUDED
+
+
+
+#endif // INICIO_C_INCLUDED
+
+
+
+

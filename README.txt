@@ -1,1 +1,1 @@
-Para maiores informações, leia a pasta _info.
+Para maiores informacoes, leia a pasta _info.
