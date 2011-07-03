@@ -16,7 +16,6 @@ void guiTelaCursorVai(int x, int y);
 void guiTelaCentroCursorVai();
 void guiTelaFinalCursorVai();
 void guiLimpaTela();
-void guiLimpaTela();
 
 /*
  * Move o cursor para a posicao determinada

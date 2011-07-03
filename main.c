@@ -12,24 +12,19 @@
 #include <stdlib.h>
 #include <conio2.h> //Biblioteca para win32/64
 
+
+#include "headers/variaveis.h"
 #include "headers/io.h"
+#include "headers/carregar.h"
+#include "headers/salvar.h"
 #include "headers/gui.h"
 #include "headers/sokuban.h"
-//#include "core/inicio.c"
 
 
 int main()
 {
-    interfaceMenu();
-    interfaceRodape();
 
-
-    telaInicio();
-    telaJogo();
-    telaCredito();
-
-
-    return(0);
+    sokubanCore();
 
     return 0;
 }

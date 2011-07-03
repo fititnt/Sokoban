@@ -28,7 +28,7 @@ char ioTeclaPressinada()
 }
 
 void ioTeclaEsperar(){
-    //ioTeclaPressinada();
+    ioTeclaPressinada();
 }
 
 

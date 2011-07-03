@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1309728290 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
+1309729275 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio2.h>
@@ -7,7 +7,7 @@
 	"headers/gui.h"
 	"headers/sokuban.h"
 
-1309728465 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\sokuban.h
+1309729467 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\sokuban.h
 
 1309720043 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\tntio.h
 
@@ -17,7 +17,7 @@
 
 1309721328 source:c:\users\fititnt\joomla\git\fititnt\sokoban\core\inicio.c
 
-1309720043 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\io.h
+1309729373 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\io.h
 
-1309728436 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
+1309728788 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
 

@@ -2,11 +2,48 @@
 #define SOKUBAN_H_INCLUDED
 
 
-/* Prototipos */
+/* Prototipos
+Se faz necessario indicar as funcoes antes, de modo que possam ser usadas em
+qualquer parte do programa
+*/
+
+void sokubanCore();
 void telaInicio();
 void telaJogo();
 void telaCredito();
+void interfaceMenu();
+void interfaceRodape();
 
+
+
+
+
+/*
+ * CORE!
+ * @return      void
+*/
+void sokubanCore(){
+    char tecla;
+    int goHorse = 1;
+
+    telaInicio();
+
+
+    do {
+        interfaceMenu();
+        interfaceRodape();
+
+        tecla = ioTeclaPressinada();
+
+        telaJogo();
+
+
+    } while (goHorse != 0);
+
+    telaCredito();
+
+
+}
 
 /*
  * Exibe a tela inicial
