@@ -10,18 +10,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio2.h> //Biblioteca para win32/64
 
-#include "headers/tntio.h"
-#include "headers/tntgui.h"
+#include "headers/io.h"
+#include "headers/gui.h"
 #include "headers/sokuban.h"
 //#include "core/inicio.c"
 
 
 int main()
 {
+    interfaceMenu();
+    interfaceRodape();
+
+
     telaInicio();
     telaJogo();
     telaCredito();
+
+
+    return(0);
 
     return 0;
 }
