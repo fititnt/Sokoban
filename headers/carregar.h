@@ -25,67 +25,20 @@ void carregarMapaPuro(char caminhoMapa[], char mapa[24][81]){
     while ( (caracter = fgetc(arquivo)) != EOF){
 
         if(caracter == '\n' || coluna == 81){ //Quebra de linhas OU limite maximo de colunas
-            mapa[linha][coluna] = '\n';
+            strcpy( mapa[linha][coluna],'\n'); //Ok, sei que e' char e nao precisaria...
             linha++; //Adiciona proxima linha
             coluna = 0; //Reseta coluna
 
             if (coluna < 81){
                 for( ; coluna <=81; coluna++)
-                    mapa[linha][coluna] = ' ';
+                    strcpy(mapa[linha][coluna], ' '); //Ok, sei que e' char e nao precisaria...
             }
         } else {
-            mapa[linha][coluna] = caracter;
+            strcpy( mapa[linha][coluna], caracter); //Ok, sei que e' char e nao precisaria...
             coluna++; //Adiciona contador
         }
         putchar(caracter);
     }
-
-    /*
-    for(i=0; i<10; i++){
-        for(j=0; j<80; j++){
-            //printf("%c",mapa[i][j]);
-        }
-        printf("\n");
-    }
-    */
-    /*
-    while ( !feof(arquivo) ){
-
-         = fgetc(caracter, arquivo);//Obtem um caracter, e posiciona o cursor para o seguinte
-
-        if (caracter = '\n' || coluna == 80 ){//Limite maximo de colunas
-            mapa[linha][coluna] = '\n';
-            if(coluna < 80){ //caso ainda nao tenha terminado a coluna
-                for( ; coluna <= 80 ; coluna++ ){
-                    mapa[linha][coluna] = ' ';//preenche com espacos em branco
-                }
-            }
-
-            linha++; //Adiciona proxima linha
-            coluna = 0; //reseta coluna
-
-        } else {
-            mapa[linha][coluna] = caracter;
-        }
-        coluna++;//Adiciona coluna
-        printf("%s", &caracter);
-        //fseek(arquivo,1*sizeof(char),SEEK_SET);
-    }
-    */
-
-    /*
-    for(i=0; i<24; i++){
-        //mapa[i] = NULL;
-        fgets(mapa[i], 80+1, arquivo);//Carrega linha
-        //Debug
-        //for()
-
-
-    }
-    printf("%s \n", mapa[i]);
-    */
-
-    //continuar...
 }
 
 /*
@@ -164,13 +117,6 @@ void carregaMapaMemoria(char *mapa[24][80], SokobanObjetos sokoban){
             }
         }
     }
-
-
-
-
 }
-
-
-
 
 #endif // CARREGAR_H_INCLUDED
