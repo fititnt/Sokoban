@@ -9,8 +9,8 @@
 */
 void carregarMapaPuro(char caminhoMapa[], char mapa[24][81]){
     FILE *arquivo;
-    char caracter, msgerro[256] = ""/*, linha[80]*/;
-    int i, j, coluna = 0, linha = 0, preencherVazios = 0;
+    char caracter, msgerro[256] = "", linhaBuffer[81];
+    int i = 0, j=0 , coluna = 0, linha = 0, preencherVazios = 0;
 
     arquivo = fopen(caminhoMapa, "r");
 
@@ -21,24 +21,33 @@ void carregarMapaPuro(char caminhoMapa[], char mapa[24][81]){
         return;
     }
 
+    while( !feof(arquivo) ){
+        fgets(mapa[i], sizeof(linhaBuffer), arquivo);
+        //fgets(linhaBuffer, sizeof(linhaBuffer), arquivo);
+        //strcpy(mapa[i], linhaBuffer);
+        i++;
+        //printf("%s",linhaBuffer);
+    }
 
+    /*
     while ( (caracter = fgetc(arquivo)) != EOF){
 
         if(caracter == '\n' || coluna == 81){ //Quebra de linhas OU limite maximo de colunas
-            strcpy( mapa[linha][coluna],'\n'); //Ok, sei que e' char e nao precisaria...
+            mapa[linha][coluna] ='\n';
             linha++; //Adiciona proxima linha
             coluna = 0; //Reseta coluna
 
             if (coluna < 81){
                 for( ; coluna <=81; coluna++)
-                    strcpy(mapa[linha][coluna], ' '); //Ok, sei que e' char e nao precisaria...
+                    mapa[linha][coluna] = ' ';
             }
         } else {
-            strcpy( mapa[linha][coluna], caracter); //Ok, sei que e' char e nao precisaria...
+            mapa[linha][coluna] = caracter;
             coluna++; //Adiciona contador
         }
         putchar(caracter);
     }
+    */
 }
 
 /*
@@ -118,5 +127,8 @@ void carregaMapaMemoria(char *mapa[24][80], SokobanObjetos sokoban){
         }
     }
 }
+
+
+
 
 #endif // CARREGAR_H_INCLUDED
