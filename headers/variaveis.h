@@ -23,7 +23,6 @@ typedef struct{
     Posicao caixa10;
 } SokobanObjetos;
 
-
 typedef struct{
     char nome[100];
     time_t criado;
@@ -34,6 +33,12 @@ typedef struct{
     time_t time;
     char msg[1024];
 }LogDeErro;
+
+typedef struct{
+    char local[100];
+    char rotina[100];
+    char msg[255];
+}Erro;
 
 
 #endif // VARIAVEIS_H_INCLUDED

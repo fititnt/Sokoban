@@ -118,6 +118,35 @@ void salvaJogador(char nomeJogador[100], int tipo){
 
 }
 
+
+/*
+ * Salva log de erro em formato texto
+ * Destino: 'erros.log', mesma pasta do excecutavel
+ * @return          void
+*/
+
+void salvaLogErroX(Erro erro){
+    FILE *arquivo;
+    time_t tempo = time(0); //tempo agora
+    struct tm *ts;
+    char timeBuffer[100];
+
+    ts = localtime(&tempo);//Faz uma copia do tempo agora
+    strftime(timeBuffer, sizeof(timeBuffer), "%Y-%m-%d %H:%M:%S", ts);//Formata o tempo agora
+
+    arquivo = fopen("erros.log","a+");//abre arquivo, modo append +, escreve ao final
+
+    if (arquivo == NULL){
+        printf("\nHouve um erro grave e nem mesmo o log de erro pode ser aberto e salvo\n");
+        return;
+    } else {
+        fprintf(arquivo, "%s | %s > %s >%s\n", timeBuffer, erro.local, erro.rotina, erro.msg);
+        fflush(arquivo);//forca descarregar do buffer para o arquivo, antes de fechar
+    }
+    fclose(arquivo);//fecha arquivo
+}
+
+
 /*
  * Salva log de erro em formato texto
  * Destino: 'erros.log', mesma pasta do excecutavel

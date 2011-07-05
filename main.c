@@ -28,8 +28,12 @@
 
 int main()
 {
+    char mapa[24][81];
+    carregarMapaPuro("mapas/labirinto1.txt", &mapa);
+    getch();
+    //guiMapaExibe(mapa);
 
-    sokubanCore();
+    //sokubanCore();
 
     return 0;
 }

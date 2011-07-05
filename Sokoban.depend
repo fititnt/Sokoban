@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1309835672 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
+1309908016 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -24,11 +24,11 @@
 
 1309731580 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\io.h
 
-1309832062 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
+1309889545 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
 
-1309837460 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\variaveis.h
+1309898755 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\variaveis.h
 
-1309839191 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\carregar.h
+1309908221 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\carregar.h
 
-1309835150 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\salvar.h
+1309898851 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\salvar.h
 
