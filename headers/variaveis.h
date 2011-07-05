@@ -6,7 +6,22 @@
  */
 typedef struct{
 int lin, col;
-} TPosicao;
+} Posicao;
+
+typedef struct{
+    Posicao jogador;
+    Posicao destino;
+    Posicao caixa1;
+    Posicao caixa2;
+    Posicao caixa3;
+    Posicao caixa4;
+    Posicao caixa5;
+    Posicao caixa6;
+    Posicao caixa7;
+    Posicao caixa8;
+    Posicao caixa9;
+    Posicao caixa10;
+} SokobanObjetos;
 
 
 typedef struct{

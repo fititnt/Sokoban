@@ -32,7 +32,7 @@ void sokubanCore(){
     telaJogador(&nomeJogador);
     clrscr();
     printf("%s",&nomeJogador);
-
+    printf("teste");
 
     do {
         //interfaceMenu();
