@@ -58,10 +58,21 @@ void ioArquivoSalvarTexto(){
 
 /*
  * @description                 Salva arquivo no modo binario
+ * @var             char[]      local: Caminho e nome do arquivo
+ * @var             char[]      modo modo escrita
  * @return          ponteiro    Arquivo a ser aberto
 */
-void ioArquivoSalvarBinario(){
+/*
+void ioArquivoSalvarBinario(char[] local, char[] modo, *informacao){
+    FILE *arquivo
 
+    if ((arquivo = fopen(local,modo)) == NULL ){
+        printf("\nErro ao abrir arquivo!");
+        return;
+    }
+
+    fwrite ( &informacao, ,sizeof(informacao), 1, arquivo);
 }
+*/
 
 

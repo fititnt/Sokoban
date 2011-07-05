@@ -10,7 +10,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include <conio2.h> //Biblioteca para win32/64
+
+#define DEBUG 1 // 0 desativa debug
 
 
 #include "headers/variaveis.h"
@@ -19,6 +23,7 @@
 #include "headers/salvar.h"
 #include "headers/gui.h"
 #include "headers/sokuban.h"
+
 
 
 int main()

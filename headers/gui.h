@@ -16,6 +16,8 @@ void guiTelaCursorVai(int x, int y);
 void guiTelaCentroCursorVai();
 void guiTelaFinalCursorVai();
 void guiLimpaTela();
+void guiTelaMapaExibe(char mapa[24][80]);
+void guiTelaOpcoesIniciais();
 
 /*
  * Move o cursor para a posicao determinada
@@ -32,7 +34,7 @@ void guiTelaCursorVai(int x, int y){
  * @return void
 */
 void guiTelaCentroCursorVai(){
-    guiTelaCursorVai(35,20);
+    guiTelaCursorVai(10,20);
 }
 
 /*
@@ -51,6 +53,22 @@ void guiTelaFinalCursorVai(){
 
 void guiLimpaTela(){
     clrscr(); //Limpar tela, ANSI-C
+}
+
+void guiTelaMapaExibe(char mapa[24][80]){
+    int i, j;
+
+    for(i=0; i<24; i++){
+        for(j=0; j<80; j++){
+            //Replace
+            if (mapa[i][j] == 'B'){
+                mapa[i][j] = (char)219;
+            }
+            printf("%c", mapa[i][j]);
+        }
+        //Linebreak
+        printf("\n");
+    }
 }
 
 

@@ -13,7 +13,7 @@ void telaJogo();
 void telaCredito();
 void interfaceMenu();
 void interfaceRodape();
-
+void telaJogador(char *nomeJogador);
 
 
 
@@ -23,15 +23,20 @@ void interfaceRodape();
  * @return      void
 */
 void sokubanCore(){
-    char tecla;
+    char tecla, nomeJogador[100];
     int goHorse = 1;
 
+    if (DEBUG == 1) salvaLogAcao("sokubanCore","Novo jogo");
+
     telaInicio();
+    telaJogador(&nomeJogador);
+    clrscr();
+    printf("%s",&nomeJogador);
 
 
     do {
-        interfaceMenu();
-        interfaceRodape();
+        //interfaceMenu();
+        //interfaceRodape();
 
         tecla = ioTeclaPressinada();
 
@@ -54,9 +59,21 @@ void telaInicio(){
     //guiLimpaTela();
     guiTelaCentroCursorVai();
 
-    printf("Tela inicio \n");
+    printf("Sokuban v0.3");
 
     getch();//ioTeclaEsperar(); //Aguarda acao do usuario para passar adiante
+}
+
+
+void telaJogador(char *nomeJogador){
+    clrscr();
+    guiTelaCentroCursorVai();
+    printf("Seu nome>");
+    gets(nomeJogador);
+
+    salvaJogador(nomeJogador, -1);
+
+    salvaLogAcao("telaJogador:Nome do Jogador",nomeJogador);
 }
 
 /*
@@ -66,9 +83,9 @@ void telaInicio(){
 void telaJogo(){
 
     //guiLimpaTela();
-    guiTelaCentroCursorVai();
+    //guiTelaCentroCursorVai();
 
-    printf("Tela Jogo \n");
+    //printf("Tela Jogo \n");
 
     getch();//ioTeclaEsperar(); //Aguarda acao do usuario para passar adiante
 }
