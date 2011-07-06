@@ -46,6 +46,8 @@ int main()
 
         tecla = getch();
 
+        sokobanMoveObjetos(&sokoban, tecla);
+
 
         printf("%c", tecla);
 
