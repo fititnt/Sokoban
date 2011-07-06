@@ -71,15 +71,12 @@ void guiTelaMapaExibe(char mapa[24][80]){
     }
 }
 
-void guiMapaExibe(char *mapa[24][80]){
+void guiMapaExibe(char mapa[24][80]){
     int i,j;
 
-    for(i=0; i<24; i++){
-        for(j=0; j<80; j++){
-            printf("%s",mapa[i][j]);
-        }
-        printf("\n");
-    }
+
+    for(i=0; i<24; i++)
+        printf(mapa[i]);
 
 }
 

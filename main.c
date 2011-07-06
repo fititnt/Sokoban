@@ -28,8 +28,11 @@
 
 int main()
 {
-    char mapa[24][81];
-    carregarMapaPuro("mapas/labirinto1.txt", &mapa);
+    char mapa[24][80];
+    int totalLinhas;
+
+    carregarMapaPuro("mapas/labirinto1.txt", mapa, &totalLinhas);
+    guiMapaExibe(mapa);
     getch();
     //guiMapaExibe(mapa);
 

@@ -7,10 +7,11 @@
  * Carrega mapa puro do disco para a memoria, sem converte-lo
  * @return          void
 */
-void carregarMapaPuro(char caminhoMapa[], char mapa[24][81]){
+void carregarMapaPuro(char caminhoMapa[], char mapa[24][80], int *totalLinhas){
     FILE *arquivo;
-    char caracter, msgerro[256] = "", linhaBuffer[81];
-    int i = 0, j=0 , coluna = 0, linha = 0, preencherVazios = 0;
+    char caracter, msgerro[256] = "", linhaBuffer[80], linhaBuffer2[80];
+    int coluna = 0, linha = 0, preencherVazios = 0;
+    int i,j;
 
     arquivo = fopen(caminhoMapa, "r");
 
@@ -20,14 +21,13 @@ void carregarMapaPuro(char caminhoMapa[], char mapa[24][81]){
         salvaLogErro(msgerro);
         return;
     }
-
-    while( !feof(arquivo) ){
-        fgets(mapa[i], sizeof(linhaBuffer), arquivo);
-        //fgets(linhaBuffer, sizeof(linhaBuffer), arquivo);
-        //strcpy(mapa[i], linhaBuffer);
+    i = 0;
+    while( !feof(arquivo) &&  i < 24 ){
+        fgets(linhaBuffer, sizeof(linhaBuffer), arquivo);
+        strcpy(mapa[i], linhaBuffer);
         i++;
-        //printf("%s",linhaBuffer);
     }
+    *totalLinhas = i;
 
     /*
     while ( (caracter = fgetc(arquivo)) != EOF){
