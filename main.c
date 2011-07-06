@@ -30,9 +30,16 @@ int main()
 {
     char mapa[24][80];
     int totalLinhas;
+    SokobanObjetos sokoban;
 
     carregarMapaPuro("mapas/labirinto1.txt", mapa, &totalLinhas);
-    guiMapaExibe(mapa);
+
+    carregaMapaMemoria(mapa, &sokoban);
+
+    printf("%i", sokoban.caixa9.col);
+
+
+    //guiMapaExibe(mapa);
     getch();
     //guiMapaExibe(mapa);
 
