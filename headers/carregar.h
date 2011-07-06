@@ -120,9 +120,11 @@ void carregaMapaMemoria(char mapa[24][80], SokobanObjetos *sokoban){
             } else if (mapa[i][j] == 'Q'){ //Q > Jogador
                 (*sokoban).jogador.lin = i;
                 (*sokoban).jogador.col = j;
+                mapa[i][j] = ' ';
             } else if (mapa[i][j] == 'X'){ //X > Buraco
                 (*sokoban).destino.lin = i;
                 (*sokoban).destino.col = j;
+                mapa[i][j] = ' ';
             }
         }
     }

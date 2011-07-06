@@ -22,21 +22,38 @@
 #include "headers/carregar.h"
 #include "headers/salvar.h"
 #include "headers/gui.h"
-#include "headers/sokuban.h"
+#include "headers/sokoban.h"
 
 
 
 int main()
 {
-    char mapa[24][80];
+    char tecla, mapa[24][80];
     int totalLinhas;
     SokobanObjetos sokoban;
 
     carregarMapaPuro("mapas/labirinto1.txt", mapa, &totalLinhas);
 
+    //guiMapaExibe(mapa);
+
     carregaMapaMemoria(mapa, &sokoban);
 
-    printf("%i", sokoban.caixa9.col);
+    guiMapaExibe(mapa);
+
+    do {
+
+        guiMapaExibeObjetos(sokoban);
+
+        tecla = getch();
+
+
+        printf("%c", tecla);
+
+    } while (tecla != 'q');
+
+
+
+    //printf("%i", sokoban.caixa9.col);
 
 
     //guiMapaExibe(mapa);

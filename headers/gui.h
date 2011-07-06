@@ -55,6 +55,9 @@ void guiLimpaTela(){
     clrscr(); //Limpar tela, ANSI-C
 }
 
+/*
+ * @deprecated
+*/
 void guiTelaMapaExibe(char mapa[24][80]){
     int i, j;
 
@@ -74,9 +77,18 @@ void guiTelaMapaExibe(char mapa[24][80]){
 void guiMapaExibe(char mapa[24][80]){
     int i,j;
 
-
     for(i=0; i<24; i++)
         printf(mapa[i]);
+
+}
+
+void guiMapaExibeObjetos(SokobanObjetos sokoban){
+    Erro erro;
+
+    //Exibe jogador
+    gotoxy(sokoban.jogador.col, sokoban.jogador.lin);
+        printf("X");
+
 
 }
 
