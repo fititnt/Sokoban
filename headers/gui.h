@@ -84,12 +84,57 @@ void guiMapaExibe(char mapa[24][80]){
 
 void guiMapaExibeObjetos(SokobanObjetos sokoban){
     Erro erro;
+    //Caracteres
+    char jogador = 'Q', buraco = 'X', caixa = '*';
 
     //Exibe jogador
     gotoxy(sokoban.jogador.col, sokoban.jogador.lin);
-        printf("X");
+        printf("%c",jogador);
+    //Exibe buraco
+    gotoxy(sokoban.destino.col, sokoban.destino.lin);
+        printf("%c",buraco);
 
-
+    //Exibe caixas, se existirem
+    if(sokoban.caixa1.lin > 0){
+        gotoxy(sokoban.caixa1.col, sokoban.caixa1.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa2.lin > 0){
+        gotoxy(sokoban.caixa2.col, sokoban.caixa2.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa3.lin > 0){
+        gotoxy(sokoban.caixa3.col, sokoban.caixa3.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa4.lin > 0){
+        gotoxy(sokoban.caixa4.col, sokoban.caixa4.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa5.lin > 0){
+        gotoxy(sokoban.caixa5.col, sokoban.caixa5.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa6.lin > 0){
+        gotoxy(sokoban.caixa6.col, sokoban.caixa6.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa7.lin > 0){
+        gotoxy(sokoban.caixa7.col, sokoban.caixa7.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa8.lin > 0){
+        gotoxy(sokoban.caixa8.col, sokoban.caixa8.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa9.lin > 0){
+        gotoxy(sokoban.caixa9.col, sokoban.caixa9.lin);
+            printf("%c", caixa);
+    }
+    if(sokoban.caixa10.lin > 0){
+        gotoxy(sokoban.caixa10.col, sokoban.caixa10.lin);
+            printf("%c", caixa);
+    }
 }
 
 

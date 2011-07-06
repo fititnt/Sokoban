@@ -38,14 +38,18 @@ int main()
 
     carregaMapaMemoria(mapa, &sokoban);
 
-    guiMapaExibe(mapa);
+
 
     do {
 
+
+        //Prepara tela
+        guiLimpaTela();
+        guiMapaExibe(mapa);
         guiMapaExibeObjetos(sokoban);
 
+        //Aguarda entrada do usuario e modifica o sokoban
         tecla = getch();
-
         sokobanMoveObjetos(&sokoban, tecla);
 
 
