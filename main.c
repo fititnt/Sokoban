@@ -49,9 +49,9 @@ int main()
 
     //Tela de selecionar nome do jogador
     sokobanTelaEscolherMapa(root.mapa);//Nao precisa do & por ja ser um vetor, logo ja aponta para o endereco
-    getch();
+    //getch();//Nessa funcao, e' desnecessario
 
-    //sokobanCore(&root); //Tela efetiva do Jogo
+    sokobanCore(&root); //Tela efetiva do Jogo
     //getch();
 
     sokobanTelaEncerramento(root);

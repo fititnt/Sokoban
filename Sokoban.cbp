@@ -31,6 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="README.txt" />
+		<Unit filename="core\inicio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="headers\carregar.h" />
+		<Unit filename="headers\debug.h" />
+		<Unit filename="headers\gui.h" />
+		<Unit filename="headers\io.h" />
+		<Unit filename="headers\salvar.h" />
+		<Unit filename="headers\sokoban.h" />
+		<Unit filename="headers\variaveis.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

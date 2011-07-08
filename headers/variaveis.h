@@ -65,10 +65,16 @@ typedef struct{
 
 
 typedef struct{
+    int movimentos;
+    int caixasconcluidas;
+}Partida;
+
+typedef struct{
     SokobanObjetos tela;
     TJogador jogador;
     Erro erro;
     Mapa mapa;
+    Partida partida;
     //char mapa[500]; //caminho do mapa
 
 }SokobanRoot;
