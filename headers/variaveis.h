@@ -1,12 +1,24 @@
 #ifndef VARIAVEIS_H_INCLUDED
 #define VARIAVEIS_H_INCLUDED
 
+/* Structs em C
+ * Referencias:
+ *          Aula 22 - Estruturas (structs)
+ *          Aula 23 - Estruturas (structs)
+ *          Aula 23 - Exercicios de estruturas (structs)
+ *
+*/
+
+
 /*
  * Posicao de um objeto
  */
 typedef struct{
-int lin, col;
-} Posicao;
+int x, y;
+} Posicao;  // = { -1, -1 }; Diferente do falado em aula, inicializar a variavel gera um erro
+            // error: typedef 'Posicao' is initialized (use __typeof__ instead)
+            // @todo: rever erro anterior;
+            // Workaround: inicializar o tipo quando for usa-lo
 
 typedef struct{
     Posicao jogador;
@@ -23,6 +35,7 @@ typedef struct{
     Posicao caixa10;
 } SokobanObjetos;
 
+
 typedef struct{
     char nome[100];
     time_t criado;
@@ -38,7 +51,18 @@ typedef struct{
     char local[100];
     char rotina[100];
     char msg[255];
-}Erro;
+}Erro; // = {"","", ""}; iferente do falado em aula, inicializar a variavel gera um erro
+       // error: typedef 'Posicao' is initialized (use __typeof__ instead)
+       // @todo: rever erro anterior;
+       // Workaround: inicializar o tipo quando for usa-lo
 
+
+typedef struct{
+    SokobanObjetos tela;
+    TJogador jogador;
+    Erro erro;
+    char mapa[500];
+
+}SokobanRoot;
 
 #endif // VARIAVEIS_H_INCLUDED

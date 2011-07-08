@@ -21,7 +21,7 @@ void guiTelaOpcoesIniciais();
 
 /*
  * Move o cursor para a posicao determinada
- *
+ * @deprecated(?)
 */
 
 void guiTelaCursorVai(int x, int y){
@@ -32,6 +32,7 @@ void guiTelaCursorVai(int x, int y){
 /*
  * Vai para o centro da tela
  * @return void
+ * @deprecated
 */
 void guiTelaCentroCursorVai(){
     guiTelaCursorVai(10,20);
@@ -40,6 +41,7 @@ void guiTelaCentroCursorVai(){
 /*
  * Vai para o centro da tela
  * @return void
+ * @deprecated
 */
 void guiTelaFinalCursorVai(){
     guiTelaCursorVai(0,80);
@@ -61,6 +63,8 @@ void guiLimpaTela(){
 void guiTelaMapaExibe(char mapa[24][80]){
     int i, j;
 
+    guiTelaCursorVai(0,1);
+
     for(i=0; i<24; i++){
         for(j=0; j<80; j++){
             //Replace
@@ -74,71 +78,103 @@ void guiTelaMapaExibe(char mapa[24][80]){
     }
 }
 
-void guiMapaExibe(char mapa[24][80]){
+ /*
+ * Exibe o mapa, na forma pura
+ * @return      int     -2 jogador, -1 destino, 0 nada, 1~10 caixas
+ */
+
+int guiMapaExibe(char mapa[24][80]){
     int i,j;
 
-    for(i=0; i<24; i++)
-        printf(mapa[i]);
 
+    for(i=0; i<24; i++)
+        printf("%s", mapa[i]);
+
+    /*
+    for(i=0; i<24; i++){
+        for (j=0; j<80; j++){
+            printf("%c", mapa[i][j]);
+        }
+    }
+    */
+    return 1;
 }
 
-void guiMapaExibeObjetos(SokobanObjetos sokoban){
+void guiMapaExibeObjetos(SokobanObjetos tela){
     Erro erro;
     //Caracteres
     char jogador = 'Q', buraco = 'X', caixa = '*';
 
     //Exibe jogador
-    gotoxy(sokoban.jogador.col, sokoban.jogador.lin);
+    gotoxy(tela.jogador.x, tela.jogador.y);
         printf("%c",jogador);
     //Exibe buraco
-    gotoxy(sokoban.destino.col, sokoban.destino.lin);
+    gotoxy(tela.destino.x, tela.destino.y);
         printf("%c",buraco);
 
     //Exibe caixas, se existirem
-    if(sokoban.caixa1.lin > 0){
-        gotoxy(sokoban.caixa1.col, sokoban.caixa1.lin);
+    if(tela.caixa1.x > 0){
+        gotoxy(tela.caixa1.x, tela.caixa1.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa2.lin > 0){
-        gotoxy(sokoban.caixa2.col, sokoban.caixa2.lin);
+    if(tela.caixa2.x > 0){
+        gotoxy(tela.caixa2.x, tela.caixa2.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa3.lin > 0){
-        gotoxy(sokoban.caixa3.col, sokoban.caixa3.lin);
+    if(tela.caixa3.x > 0){
+        gotoxy(tela.caixa3.x, tela.caixa3.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa4.lin > 0){
-        gotoxy(sokoban.caixa4.col, sokoban.caixa4.lin);
+    if(tela.caixa4.x > 0){
+        gotoxy(tela.caixa4.x, tela.caixa4.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa5.lin > 0){
-        gotoxy(sokoban.caixa5.col, sokoban.caixa5.lin);
+    if(tela.caixa5.x > 0){
+        gotoxy(tela.caixa5.x, tela.caixa5.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa6.lin > 0){
-        gotoxy(sokoban.caixa6.col, sokoban.caixa6.lin);
+    if(tela.caixa6.x > 0){
+        gotoxy(tela.caixa6.x, tela.caixa6.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa7.lin > 0){
-        gotoxy(sokoban.caixa7.col, sokoban.caixa7.lin);
+    if(tela.caixa7.x > 0){
+        gotoxy(tela.caixa7.x, tela.caixa7.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa8.lin > 0){
-        gotoxy(sokoban.caixa8.col, sokoban.caixa8.lin);
+    if(tela.caixa8.x > 0){
+        gotoxy(tela.caixa8.x, tela.caixa8.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa9.lin > 0){
-        gotoxy(sokoban.caixa9.col, sokoban.caixa9.lin);
+    if(tela.caixa9.x > 0){
+        gotoxy(tela.caixa9.x, tela.caixa9.y);
             printf("%c", caixa);
     }
-    if(sokoban.caixa10.lin > 0){
-        gotoxy(sokoban.caixa10.col, sokoban.caixa10.lin);
+    if(tela.caixa10.x > 0){
+        gotoxy(tela.caixa10.x, tela.caixa10.y);
             printf("%c", caixa);
     }
 }
 
 
 
+int guiTelaCompletaExibe(char tela[24][80]){
+    int i, j;
+    for(i=0; i<24; i++){
+        for(j=0; j<80; j++){
+            if(tela[i][j] != '\n'){//Evitar quebrar duas vezes
+                printf("%c", tela[i][j]);
+            }
+        }
+        printf("\n");//quebra de linha
+    }
+
+}
+
+/*
+void guiTelaExibeRodape(SokobanRootMem sokobanRM){
+
+}
+*/
 #endif // TNTGUI_H_INCLUDED
 
 

@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1309918000 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
+1310144079 source:c:\users\fititnt\joomla\git\fititnt\sokoban\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	<conio2.h>
 	"headers/variaveis.h"
+	"headers/debug.h"
 	"headers/io.h"
 	"headers/carregar.h"
 	"headers/salvar.h"
@@ -24,13 +25,15 @@
 
 1309895934 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\io.h
 
-1309918719 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
+1310142104 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\gui.h
 
-1309895934 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\variaveis.h
+1310142417 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\variaveis.h
 
-1309915783 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\carregar.h
+1310144042 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\carregar.h
 
 1309895934 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\salvar.h
 
-1309920167 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\sokoban.h
+1310144132 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\sokoban.h
+
+1310142461 c:\users\fititnt\joomla\git\fititnt\sokoban\headers\debug.h
 

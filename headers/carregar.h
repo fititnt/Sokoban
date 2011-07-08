@@ -5,9 +5,9 @@
 
 /*
  * Carrega mapa puro do disco para a memoria, sem converte-lo
- * @return          void
+ * @return          int     0: se erro, 1: se ok
 */
-void carregarMapaPuro(char caminhoMapa[], char mapa[24][80], int *totalLinhas){
+int carregarMapaPuro(char caminhoMapa[500], char mapa[24][80], int *totalLinhas){
     FILE *arquivo;
     char caracter, msgerro[256] = "", linhaBuffer[80], linhaBuffer2[80];
     int coluna = 0, linha = 0, preencherVazios = 0;
@@ -19,7 +19,7 @@ void carregarMapaPuro(char caminhoMapa[], char mapa[24][80], int *totalLinhas){
         strcat(msgerro, "carregarMapaPuro.ErroDeAbertura>");
         strcat(msgerro, caminhoMapa);
         salvaLogErro(msgerro);
-        return;
+        return 0; //Erro
     }
     i = 0;
     while( !feof(arquivo) &&  i < 24 ){
@@ -48,11 +48,12 @@ void carregarMapaPuro(char caminhoMapa[], char mapa[24][80], int *totalLinhas){
         putchar(caracter);
     }
     */
+    return 1;
 }
 
 /*
  * Carrega remove objetos do mapa e os transfere para um struct SokobanObjetos, definido em /variaveis.h
- * @return          void
+ * @return          int     0: se erro, 1: se ok
 */
 void carregaMapaMemoria(char mapa[24][80], SokobanObjetos *sokoban){
     int i, j, caixa = 1;
@@ -65,65 +66,65 @@ void carregaMapaMemoria(char mapa[24][80], SokobanObjetos *sokoban){
                 //Decide em qual slot coloca a caixa
                 switch (caixa){
                     case 1:
-                        (*sokoban).caixa1.lin = i;
-                        (*sokoban).caixa1.col = j;
+                        (*sokoban).caixa1.x = i;
+                        (*sokoban).caixa1.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 2:
-                        (*sokoban).caixa2.lin = i;
-                        (*sokoban).caixa2.col = j;
+                        (*sokoban).caixa2.x = i;
+                        (*sokoban).caixa2.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 3:
-                        (*sokoban).caixa3.lin = i;
-                        (*sokoban).caixa3.col = j;
+                        (*sokoban).caixa3.x = i;
+                        (*sokoban).caixa3.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 4:
-                        (*sokoban).caixa4.lin = i;
-                        (*sokoban).caixa4.col = j;
+                        (*sokoban).caixa4.x = i;
+                        (*sokoban).caixa4.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 5:
-                        (*sokoban).caixa5.lin = i;
-                        (*sokoban).caixa5.col = j;
+                        (*sokoban).caixa5.x = i;
+                        (*sokoban).caixa5.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 6:
-                        (*sokoban).caixa6.lin = i;
-                        (*sokoban).caixa6.col = j;
+                        (*sokoban).caixa6.x = i;
+                        (*sokoban).caixa6.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 7:
-                        (*sokoban).caixa7.lin = i;
-                        (*sokoban).caixa7.col = j;
+                        (*sokoban).caixa7.x = i;
+                        (*sokoban).caixa7.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 8:
-                        (*sokoban).caixa8.lin = i;
-                        (*sokoban).caixa8.col = j;
+                        (*sokoban).caixa8.x = i;
+                        (*sokoban).caixa8.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 9:
-                        (*sokoban).caixa9.lin = i;
-                        (*sokoban).caixa9.col = j;
+                        (*sokoban).caixa9.x = i;
+                        (*sokoban).caixa9.y = j;
                         mapa[i][j] = ' ';
                         break;
                     case 10:
-                        (*sokoban).caixa10.lin = i;
-                        (*sokoban).caixa10.col = j;
+                        (*sokoban).caixa10.x = i;
+                        (*sokoban).caixa10.y = j;
                         mapa[i][j] = ' ';
                         break;
                 }
                 caixa++;
 
             } else if (mapa[i][j] == 'Q'){ //Q > Jogador
-                (*sokoban).jogador.lin = i;
-                (*sokoban).jogador.col = j;
+                (*sokoban).jogador.x = i;
+                (*sokoban).jogador.y = j;
                 mapa[i][j] = ' ';
             } else if (mapa[i][j] == 'X'){ //X > Buraco
-                (*sokoban).destino.lin = i;
-                (*sokoban).destino.col = j;
+                (*sokoban).destino.x = i;
+                (*sokoban).destino.y = j;
                 mapa[i][j] = ' ';
             }
         }
@@ -132,37 +133,38 @@ void carregaMapaMemoria(char mapa[24][80], SokobanObjetos *sokoban){
     //Setar posicao das caixas nao usadas como -1
                 switch (caixa){
                     case 1:
-                        (*sokoban).caixa1.lin = -1;
-                        (*sokoban).caixa1.col = -1;
+                        (*sokoban).caixa1.x = -1;
+                        (*sokoban).caixa1.y = -1;
                     case 2:
-                        (*sokoban).caixa2.lin = -1;
-                        (*sokoban).caixa2.col = -1;
+                        (*sokoban).caixa2.x = -1;
+                        (*sokoban).caixa2.y = -1;
                     case 3:
-                        (*sokoban).caixa3.lin = -1;
-                        (*sokoban).caixa3.col = -1;
+                        (*sokoban).caixa3.x = -1;
+                        (*sokoban).caixa3.y = -1;
                     case 4:
-                        (*sokoban).caixa4.lin = -1;
-                        (*sokoban).caixa4.col = -1;
+                        (*sokoban).caixa4.x = -1;
+                        (*sokoban).caixa4.y = -1;
                     case 5:
-                        (*sokoban).caixa5.lin = -1;
-                        (*sokoban).caixa5.col = -1;
+                        (*sokoban).caixa5.x = -1;
+                        (*sokoban).caixa5.y = -1;
                     case 6:
-                        (*sokoban).caixa6.lin = -1;
-                        (*sokoban).caixa6.col = -1;
+                        (*sokoban).caixa6.x = -1;
+                        (*sokoban).caixa6.y = -1;
                     case 7:
-                        (*sokoban).caixa7.lin = -1;
-                        (*sokoban).caixa7.col = -1;
+                        (*sokoban).caixa7.x = -1;
+                        (*sokoban).caixa7.y = -1;
                     case 8:
-                        (*sokoban).caixa8.lin = -1;
-                        (*sokoban).caixa8.col = -1;
+                        (*sokoban).caixa8.x = -1;
+                        (*sokoban).caixa8.y = -1;
                     case 9:
-                        (*sokoban).caixa9.lin = -1;
-                        (*sokoban).caixa9.col = -1;
+                        (*sokoban).caixa9.x = -1;
+                        (*sokoban).caixa9.y = -1;
                     case 10:
-                        (*sokoban).caixa10.lin = -1;
-                        (*sokoban).caixa10.col = -1;
+                        (*sokoban).caixa10.x = -1;
+                        (*sokoban).caixa10.y = -1;
                         break;
                 }
+    return 1;
 }
 
 
