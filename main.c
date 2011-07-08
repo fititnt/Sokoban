@@ -29,7 +29,7 @@
 int main()
 {
     char tecla, mapa[24][80];
-    int totalLinhas;
+
     SokobanRoot root; //Struct que contem centraliza toda a memoria do programa
     //SokobanObjetos sokoban;
     //Inicializar variavel
@@ -45,72 +45,18 @@ int main()
 
     //Tela de selecionar nome do jogador
     sokobanTelaJogador(&root.jogador);
-    getch();
+    //getch();//Nessa funcao, e' desnecessario
 
     //Tela de selecionar nome do jogador
-    sokobanTelaEscolherMapa(&root.mapa);
+    sokobanTelaEscolherMapa(root.mapa);//Nao precisa do & por ja ser um vetor, logo ja aponta para o endereco
     getch();
 
+    //sokobanCore(&root); //Tela efetiva do Jogo
+    //getch();
 
-    if( carregarMapaPuro(root.mapa, mapa, &totalLinhas) != 1 && DEBUG == 1){
-        printf("\n Erro ao carregar mapa\n");
-        getch();
-        return 0;
-    };
-    /*
-    if( guiMapaExibe(mapa) != 1 && DEBUG == 1){
-        printf("\n Erro ao exibir mapa\n");
-        getch();
-        return 0;
-    }
-    */
-    //guiTelaCentroCursorVai(0,0); printf("test");
-    carregaMapaMemoria(mapa, &root.tela);//Somente coordenadas root.xy sao repassadas
-
-    guiMapaExibe(mapa);
-
-    //printf("linha %i, coluna %i", root.tela.jogador.x, root.tela.jogador.y);
-
+    sokobanTelaEncerramento(root);
     getch();
-    clrscr();
-    getch();
-    //guiLimpaTela();
-    do {
 
-
-        //Prepara tela
-        //guiMapaExibe(mapa);
-
-        //Aguarda entrada do usuario e modifica o sokoban
-
-        sokobanMoveObjetos(&root.tela, mapa, tecla);
-
-
-        printf("%c", tecla);
-
-        //debug
-        guiTelaCentroCursorVai(0,25);
-        debugExibeRoot(root);
-        //pega a tecla ja para o proximo loop
-        tecla = getch();
-
-        //Exibe mapa
-        clrscr();
-        guiTelaCentroCursorVai(-24,1);
-        guiMapaExibe(mapa);
-
-    } while (tecla != 'q');
-
-
-
-    //printf("%i", sokoban.caixa9.col);
-
-
-    //guiMapaExibe(mapa);
-    getch();
-    //guiMapaExibe(mapa);
-
-    //sokubanCore();
 
     return 0;
 }

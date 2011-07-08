@@ -56,12 +56,20 @@ typedef struct{
        // @todo: rever erro anterior;
        // Workaround: inicializar o tipo quando for usa-lo
 
+typedef struct{
+    char local[500];//caminho
+    char raw[24][80];//formato bruto
+    int  linhas;//numero de linhas
+    char tela[24][80];
+}Mapa;
+
 
 typedef struct{
     SokobanObjetos tela;
     TJogador jogador;
     Erro erro;
-    char mapa[500];
+    Mapa mapa;
+    //char mapa[500]; //caminho do mapa
 
 }SokobanRoot;
 
